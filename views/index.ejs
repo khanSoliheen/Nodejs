@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title><%= Title  %></title>
+  </head>
+  <body>
+    <form action="/add-user" method="POST">
+        <div class="form-control">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div class="form-control">
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email">
+        </div>
+        <div class="form-control">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="number" name="phoneNumber" id="phoneNumber" step="0.01">
+        </div>
+        <div class="form-control">
+            <label for="password">Password</label>
+            <input name="password" id="password" rows="5">
+        </div>
+        <div class="form-control">
+            <label for="confirmPassword">Confirm Password</label>
+            <input name="confirmPassword" id="confirmPassword" rows="5">
+        </div>
+        <div class="form-control">
+            <label for="pinCode">Pin code</label>
+            <input name="pinCode" id="pinCode" rows="5">
+        </div>
+        <button class="btn" type="submit">Submit</button>
+    </form>
+  </body>
+</html>

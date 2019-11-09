@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title><%= Title  %></title>
+  </head>
+  <body>
+    <form action="/<% if(editing) {%> edit-user <%} else {%> add-user <% } %>" method="POST">
+        <div class="form-control">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" value="<% if (editing) { %><%= user.name %> <% } %>">
+        </div>
+        <div class="form-control">
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" value="<% if (editing) { %><%= user.email %> <% } %>">
+        </div>
+        <div class="form-control">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="number" name="phoneNumber" id="phoneNumber" step="0.01" value="<% if (editing) { %><%= user.phoneNumber %> <% } %>">
+        </div>
+        <div class="form-control">
+            <label for="password">Password</label>
+            <input name="password" id="password" value="<% if (editing) { %><%= user.password %> <% } %>">
+        </div>
+        <div class="form-control">
+            <label for="confirmPassword">Confirm Password</label>
+            <input name="confirmPassword" id="confirmPassword" value="<% if (editing) { %><%= user.confirmPassword %> <% } %>">
+        </div>
+        <div class="form-control">
+            <label for="pinCode">Pin code</label>
+            <input name="pinCode" id="pinCode" value="<% if (editing) { %><%= user.pinCode %> <% } %>">
+        </div>
+        <button class="btn" type="submit"><% if(editing) {%> Update <% } else { %> Submit <% } %></button>
+    </form>
+  </body>
+</html>
+
+
+

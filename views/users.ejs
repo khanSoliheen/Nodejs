@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title><%= Title  %></title>
+  </head>
+  <body>
+      <%if (users.length > 0) {%>
+        <div>
+          <% users.forEach(user => { %>
+            <h3> <%= user. name %> <h3>
+            <h3> <%= user. email %> <h3>
+            <h3> <%= user.phoneNumber %> <h3>
+            <h3> <%= user.password %> <h3>
+            <h3> <%= user.confirmPassword %> <h3>
+            <h3> <%= user.pinCode %> <h3>
+            <a href="/edit-user/<%= user._id %>?edit=true">Edit</a>
+            <a href="/users/<%= user._id %>">Details</a>
+            <form action="/delete-user" method="POST">
+              <input type="hidden" name="userId" value="<%= user._id%> ">
+              <button>Delete</button>
+            </form>
+          <% })  %>
+        </div>
+      <% } else { %>
+        <h3>No users found</h3>
+      <% } %>
+  </body>
+</html>
